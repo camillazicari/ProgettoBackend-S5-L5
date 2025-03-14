@@ -10,7 +10,7 @@ namespace ProgettoBackend_S5_L5.Controllers
 
         public TrasgressoriController(TrasgressoriService trasgressoriService)
         {
-            this._trasgressoriService = trasgressoriService;
+            _trasgressoriService = trasgressoriService;
         }
         public async Task<IActionResult> Index()
         {
@@ -18,5 +18,30 @@ namespace ProgettoBackend_S5_L5.Controllers
 
             return View(anagrafiche);
         }
+
+        public IActionResult AddAnagrafiche()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddAnagrafiche(AddAnagraficaViewModel addAnagraficaViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                TempData["Error"] = "Error while saving entity to database";
+                return RedirectToAction("Index");
+            }
+
+            var result = await _trasgressoriService.AddAnagraficaAsync(addAnagraficaViewModel);
+
+            if (!result)
+            {
+                TempData["Error"] = "Error while saving entity to database";
+            }
+
+            return RedirectToAction("Index");
+        }
+
     }
 }

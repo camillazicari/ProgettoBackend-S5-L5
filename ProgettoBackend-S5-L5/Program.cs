@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ProgettoBackend_S5_L5.Data;
+using ProgettoBackend_S5_L5.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,9 @@ var connectionstring = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionstring)
 );
+
+builder.Services.AddScoped<TrasgressoriService>();
+builder.Services.AddScoped<VerbaliService>();
 
 var app = builder.Build();
 

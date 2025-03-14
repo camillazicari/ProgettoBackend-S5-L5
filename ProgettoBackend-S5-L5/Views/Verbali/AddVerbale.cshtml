@@ -1,0 +1,61 @@
+﻿@model AddVerbaleViewModel
+@{
+	ViewData["Title"] = "Aggiungi Verbale";
+	var anagrafiche = ViewBag.Anagrafiche as AnagraficaViewModel;
+}
+
+
+<form method="post" asp-controller="Verbali" asp-action="AddVerbale">
+	<div class="my-4 text-end">
+		<button type="submit" class="btn btn-success">Save</button>
+	</div>
+	<div class="formGroup">
+		<label asp-for="DataViolazione" class="form-label"></label>
+		<input asp-for="DataViolazione" type="date" class="form-control" />
+		<span class="text-danger" asp-validation-for="DataViolazione"></span>
+	</div>
+
+	<div class="formGroup">
+		<label asp-for="IndirizzoViolazione" class="form-label"></label>
+		<input type="text" asp-for="IndirizzoViolazione" class="form-control" />
+		<span class="text-danger" asp-validation-for="IndirizzoViolazione"></span>
+	</div>
+
+	<div class="formGroup">
+		<label asp-for="NominativoAgente" class="form-label"></label>
+		<input asp-for="NominativoAgente" class="form-control" />
+		<span class="text-danger" asp-validation-for="NominativoAgente"></span>
+	</div>
+
+	<div class="formGroup">
+		<label asp-for="DataTrascrizioneVerbale" class="form-label"></label>
+		<input asp-for="DataTrascrizioneVerbale" type="date" class="form-control" />
+		<span class="text-danger" asp-validation-for="DataTrascrizioneVerbale"></span>
+	</div>
+
+	<div class="formGroup">
+		<label asp-for="Importo" class="form-label"></label>
+		<input asp-for="Importo" class="form-control" />
+		<span class="text-danger" asp-validation-for="Importo"></span>
+	</div>
+
+	<div class="formGroup">
+		<label asp-for="DecurtamentoPunti" class="form-label"></label>
+		<input asp-for="DecurtamentoPunti" class="form-control" />
+		<span class="text-danger" asp-validation-for="DecurtamentoPunti"></span>
+	</div>
+
+	<div class="formGroup">
+		<label asp-for="Idanagrafica" class="form-label"></label>
+		<select asp-for="Idanagrafica" class="form-control" />
+		@foreach(var anagrafica in anagrafiche.Anagrafiche)
+		{
+			<option value="@anagrafica.Idanagrafica">@anagrafica.Nome @anagrafica.Cognome</option>
+		}
+		<span class="text-danger" asp-validation-for="Idanagrafica"></span>
+	</div>
+</form>
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}

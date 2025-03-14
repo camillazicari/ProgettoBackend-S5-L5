@@ -1,0 +1,17 @@
+﻿@model ViolazioneViewModel
+@{
+    ViewData["Title"] = "Aggiungi Violazione";
+    var idVerbale = ViewData["idVerbale"];
+}
+
+<h1 class="text-center mt-4 mb-3">Aggiungi Violazione</h1>
+<form class="mb-4" method="post" asp-controller="Verbali" asp-action="AddViolazione" asp-route-id="@idVerbale">
+    <select asp-for="IdViolazione" class="form-control text-center">
+        @foreach(var violazione in Model.Violazioni){
+            <option value="@violazione.Idviolazione">@violazione.Descrizione</option>
+        }
+    </select>
+    <div class="text-end mt-3">
+        <button class="btn btn-primary">Save</button>
+    </div>
+</form>

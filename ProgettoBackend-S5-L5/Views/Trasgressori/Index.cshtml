@@ -2,3 +2,43 @@
 
 @{ViewData["Title"] = "Trasgressori";
 }
+
+<h1 class="text-center mt-4 mb-3">Trasgressori</h1>
+<div class="text-end mb-3">
+	<a asp-controller="Trasgressori" asp-action="AddAnagrafiche" class="btn btn-primary">Nuovo Trasgressore</a>
+</div>
+<table class="table table-bordered table-hover">
+	<thead class="thead-dark ">
+		<tr class="text-center centroTab">
+			<th>Nome</th>
+			<th>Cognome</th>
+			<th>Indirizzo</th>
+			<th>Città</th>
+			<th>Cap</th>
+			<th>Codice Fiscale</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var anagrafica in Model.Anagrafiche)
+		{
+			<tr class="centroTab">
+				<td>@anagrafica.Nome</td>
+				<td class="">@anagrafica.Cognome</td>
+				<td class="">@anagrafica.Indirizzo</td>
+				<td class="">@anagrafica.Citta</td>
+				<td class="">@anagrafica.Cap</td>
+				<td class="">@anagrafica.CodFisc</td>
+				<td class=" d-flex border-0 justify-content-center">
+					<a class="mx-1" asp-controller="" asp-action="" asp-route-id="">
+						<button class="edit-button">
+							Modifica
+						</button>
+					</a>
+					<a class="mx-1" asp-controller="" asp-action="" asp-route-id="">
+							Elimina
+					</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

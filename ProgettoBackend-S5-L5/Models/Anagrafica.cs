@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace ProgettoBackend_S5_L5.Models;
 
 [Table("ANAGRAFICA")]
-[Index("CodFisc", Name = "UQ__ANAGRAFI__063721E1D9EE1B4A", IsUnique = true)]
+[Index("CodFisc", Name = "UQ__ANAGRAFI__063721E18C083097", IsUnique = true)]
 public partial class Anagrafica
 {
     [Key]
@@ -28,7 +28,7 @@ public partial class Anagrafica
 
     [StringLength(20)]
     [Unicode(false)]
-    public string Città { get; set; } = null!;
+    public string Citta { get; set; } = null!;
 
     [Column("CAP")]
     [StringLength(5)]

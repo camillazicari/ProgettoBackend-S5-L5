@@ -1,0 +1,39 @@
+﻿@model VerbaleViewModel
+@{
+	ViewData["Title"] = "Verbali";
+}
+
+<h1>Verbali</h1>
+<div>
+	<a asp-controller="Verbali" asp-action="AddVerbale" class="btn btn-primary">Nuovo Verbale</a>
+</div>
+<table class="table table-bordered table-hover">
+	<thead class="thead-dark ">
+		<tr class="text-center centroTab">
+			<th>Data</th>
+			<th>Indirizzo</th>
+			<th>Nome Agente</th>
+			<th>Data Trascrizione</th>
+			<th>Importo</th>
+			<th>Decurtamento Punti</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var verbale in Model.Verbali)
+		{
+			<tr class="centroTab">
+				<td>@verbale.DataViolazione</td>
+				<td class="">@verbale.IndirizzoViolazione</td>
+				<td class="">@verbale.NominativoAgente</td>
+				<td class="">@verbale.DataTrascrizioneVerbale</td>
+				<td class="">@verbale.Importo</td>
+				<td class="">@verbale.DecurtamentoPunti</td>
+				<td class=" d-flex border-0 justify-content-center">
+					<a class="mx-1 btn btn-warning" asp-controller="Verbali" asp-action="Violazioni" asp-route-id="@verbale.Idverbale">
+							Vedi Violazioni
+					</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
