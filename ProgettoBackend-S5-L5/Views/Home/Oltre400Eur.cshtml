@@ -1,0 +1,32 @@
+﻿@model Oltre400EurViewModel
+@{
+	ViewData["Title"] = "Oltre 400 euro";
+}
+
+
+<h1 class="text-center mt-4 mb-3">Verbali che superano i 400 euro</h1>
+<table class="table table-bordered table-hover">
+	<thead class="thead-dark ">
+		<tr class="text-center centroTab">
+			<th>Data Violazione</th>
+			<th>Indirizzo Violazone</th>
+			<th>Nominativo Agente</th>
+			<th>Data Trascrizione Verbale</th>
+			<th>Importo</th>
+			<th>Decurtamento Punti</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var verbale in Model.Oltre400Eur)
+		{
+			<tr class="centroTab">
+				<td>@verbale.DataViolazione</td>
+				<td class="">@verbale.IndirizzoViolazione</td>
+				<td class="">@verbale.NominativoAgente</td>
+				<td class="">@verbale.DataTrascrizioneVerbale</td>
+				<td class="">@verbale.Importo</td>
+				<td class="">@verbale.DecurtamentoPunti</td>
+			</tr>
+		}
+	</tbody>
+</table>

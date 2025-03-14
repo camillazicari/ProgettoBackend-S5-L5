@@ -1,0 +1,27 @@
+﻿@model Oltre10PtViewModel
+@{
+	ViewData["Title"] = "Oltre 10 pt";
+}
+
+<h1 class="text-center mt-4 mb-3">Violazioni che superano i 10 punti</h1>
+<table class="table table-bordered table-hover">
+	<thead class="thead-dark ">
+		<tr class="text-center centroTab">
+			<th>Nome Trasgressore</th>
+			<th>Cognome Trasgressore</th>
+			<th>Totale Punti Decurtati</th>
+			<th>Importo</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var punti in Model.Oltre10Pt)
+		{
+			<tr class="centroTab">
+				<td>@punti.Nome</td>
+				<td class="">@punti.Cognome</td>
+				<td class="">@punti.Punti</td>
+				<td class="">@punti.Importo</td>
+			</tr>
+		}
+	</tbody>
+</table>

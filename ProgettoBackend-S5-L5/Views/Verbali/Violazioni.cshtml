@@ -8,7 +8,7 @@
 <div class="text-end mb-3">
 	<a asp-controller="Verbali" asp-action="AddViolaziones" asp-route-id="@idVerbale" class="btn btn-primary">Nuova Violazione</a>
 </div>
-<table class="table table-bordered table-hover">
+<table class="table table-bordered table-hover text-center">
 	<thead class="thead-dark ">
 		<tr class="text-center centroTab">
 			<th>Descrizione</th>
@@ -20,12 +20,6 @@
 		{
 			<tr class="centroTab">
 				<td>@violazione.IdviolazioneNavigation.Descrizione</td>
-
-				<td class=" d-flex border-0 justify-content-center">
-					<a class="mx-1 btn btn-danger" asp-controller="" asp-action="" asp-route-id="@violazione.IdviolazioneNavigation.Idviolazione">
-							Elimina Violazioni
-					</a>
-				</td>
 			</tr>
 		}
 	</tbody>

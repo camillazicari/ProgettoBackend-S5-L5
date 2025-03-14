@@ -3,10 +3,17 @@
 }
 
 <div class="text-center">
-	<h1 class="display-4">Richieste frequenti</h1>
-	<a asp-controller="Home" asp-action="TotVerbali">Totale Verbali trascritti in base al Trasgressore</a>
-	<a asp-controller="Home" asp-action="">Totale Punti decurtati in base al Trasgressore</a>
-	<a asp-controller="Home" asp-action="">Violazioni che superano i 10 punti</a>
-	<a asp-controller="Home" asp-action="">Violazioni il cui importo supera i 400 euro</a>
-
+	<h1 class="text-center mb-3">Richieste frequenti</h1>
+	<div>
+		<a asp-controller="Home" class="btn btn-outline-info my-2" asp-action="TotVerbali">Totale Verbali trascritti in base al Trasgressore</a>
+	</div>
+	<div>
+		<a asp-controller="Home" class="btn btn-outline-info my-2" asp-action="TotPunti">Totale Punti decurtati in base al Trasgressore</a>
+	</div>
+	<div>
+		<a asp-controller="Home" class="btn btn-outline-info my-2" asp-action="Oltre10Pt">Violazioni che superano i 10 punti</a>
+	</div>
+	<div>
+		<a asp-controller="Home" class="btn btn-outline-info my-2" asp-action="Oltre400Eur">Violazioni il cui importo supera i 400 euro</a>
+	</div>
 </div>

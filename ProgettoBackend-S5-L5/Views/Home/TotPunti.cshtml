@@ -1,0 +1,25 @@
+﻿@model TotPuntiViewModel
+@{
+	ViewData["Title"] = "Totale Punti";
+}
+
+<h1 class="text-center mt-4 mb-3">Totale punti decurtati per ogni trasgressore</h1>
+<table class="table table-bordered table-hover">
+	<thead class="thead-dark ">
+		<tr class="text-center centroTab">
+			<th>Nome Trasgressore</th>
+			<th>Cognome Trasgressore</th>
+			<th>Totale Punti Decurtati</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var punti in Model.TotPunti)
+		{
+			<tr class="centroTab">
+				<td>@punti.NomeTrasgressore</td>
+				<td class="">@punti.CognomeTrasgressore</td>
+				<td class="">@punti.Punt</td>
+			</tr>
+		}
+	</tbody>
+</table>

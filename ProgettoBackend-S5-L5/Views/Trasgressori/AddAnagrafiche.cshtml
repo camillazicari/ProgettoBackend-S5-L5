@@ -4,45 +4,51 @@
 	ViewData["Title"] = "Nuova Anagrafica";
 }
 
+<h1 class="text-center mt-4 mb-3">Nuovo Trasgressore</h1>
+<div class="mb-3">
+	<form method="post" asp-controller="Trasgressori" asp-action="AddAnagrafiche">
+		<div class="formGroup">
+			<label asp-for="Nome" class="form-label"></label>
+			<input asp-for="Nome" class="form-control" />
+			<span class="text-danger" asp-validation-for="Nome"></span>
+		</div>
 
-<form method="post" asp-controller="Trasgressori" asp-action="AddAnagrafiche">
-	<div class="formGroup">
-		<label asp-for="Nome" class="form-label"></label>
-		<input asp-for="Nome" class="form-control" />
-		<span class="text-danger" asp-validation-for="Nome"></span>
-	</div>
+		<div class="formGroup">
+			<label asp-for="Cognome" class="form-label"></label>
+			<input type="text" asp-for="Cognome" class="form-control" />
+			<span class="text-danger" asp-validation-for="Cognome"></span>
+		</div>
 
-	<div class="formGroup">
-		<label asp-for="Cognome" class="form-label"></label>
-		<input type="text" asp-for="Cognome" class="form-control" />
-		<span class="text-danger" asp-validation-for="Cognome"></span>
-	</div>
+		<div class="formGroup">
+			<label asp-for="Indirizzo" class="form-label"></label>
+			<input asp-for="Indirizzo" class="form-control" />
+			<span class="text-danger" asp-validation-for="Indirizzo"></span>
+		</div>
 
-	<div class="formGroup">
-		<label asp-for="Indirizzo" class="form-label"></label>
-		<input asp-for="Indirizzo" class="form-control" />
-		<span class="text-danger" asp-validation-for="Indirizzo"></span>
-	</div>
+		<div class="formGroup">
+			<label asp-for="Citta" class="form-label"></label>
+			<input asp-for="Citta" class="form-control" />
+			<span class="text-danger" asp-validation-for="Citta"></span>
+		</div>
 
-	<div class="formGroup">
-		<label asp-for="Citta" class="form-label"></label>
-		<input asp-for="Citta" class="form-control" />
-		<span class="text-danger" asp-validation-for="Citta"></span>
-	</div>
+		<div class="formGroup">
+			<label asp-for="Cap" class="form-label"></label>
+			<input asp-for="Cap" class="form-control" />
+			<span class="text-danger" asp-validation-for="Cap"></span>
+		</div>
 
-	<div class="formGroup">
-		<label asp-for="Cap" class="form-label"></label>
-		<input asp-for="Cap" class="form-control" />
-		<span class="text-danger" asp-validation-for="Cap"></span>
-	</div>
-
-	<div class="formGroup">
-		<label asp-for="CodFisc" class="form-label"></label>
-		<input asp-for="CodFisc" class="form-control" />
-		<span class="text-danger" asp-validation-for="CodFisc"></span>
-	</div>
-	<button>Save</button>
-</form>
+		<div class="formGroup">
+			<label asp-for="CodFisc" class="form-label"></label>
+			<input asp-for="CodFisc" class="form-control" />
+			<span class="text-danger" asp-validation-for="CodFisc"></span>
+		</div>
+		<div class="text-end">
+			<div class="text-end">
+				<button class="btn btn-success mt-3">Save</button>
+			</div>
+		</div>
+	</form>
+</div>
 
 @section Scripts {
 	<partial name="_ValidationScriptsPartial" />
